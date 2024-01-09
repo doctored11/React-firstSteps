@@ -1,4 +1,8 @@
-import './Card.css';
+import "./Card.css";
+import React from 'react';
+import { useFocus } from './useList';
+
+
 
 export const Card = ({
   id,
@@ -7,7 +11,13 @@ export const Card = ({
   done,
   onToggle,
   onDelete,
+
 }) => {
+
+  const inputRef = useFocus();
+  
+
+
   const handleTitleChange = (event) => {
     onTitleChange(id, event.target.value);
   };
@@ -22,7 +32,7 @@ export const Card = ({
   };
 
   const handleTitleBlur = () => {
-    if (title === '') {
+    if (title === "") {
       onDelete(id);
     }
   };
@@ -43,6 +53,8 @@ export const Card = ({
         value={title}
         onChange={handleTitleChange}
         onBlur={handleTitleBlur}
+        ref={inputRef}
+        
       />
     </form>
   );

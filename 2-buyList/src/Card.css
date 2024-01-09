@@ -19,6 +19,9 @@
 .card:has(.card__done:checked):not(:has(.card__title:focus)) {
   opacity: 0.5;
 }
+.card__title:focus{
+  outline: #3834f3 2px solid ;
+}
 
 .card:has(.card__done:checked) > .card__title:not(:focus) {
   text-decoration: line-through;

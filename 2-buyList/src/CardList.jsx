@@ -7,7 +7,6 @@ export const CardList = ({
   onItemToggle,
   onItemDelete,
 }) => {
-  console.log(list)
   return (
     <ul className="card-list">
       {list.map(({ id, title, done }) => {
