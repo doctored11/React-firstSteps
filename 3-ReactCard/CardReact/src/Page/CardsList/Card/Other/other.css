@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+    .other-links {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .other {
+        width: 25%;
+        display: flex;
+      }
+}
