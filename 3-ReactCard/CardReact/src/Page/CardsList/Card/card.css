@@ -11,7 +11,9 @@
   max-height: 110px;
   justify-content: space-between;
   align-items: center;
+  padding-right: 3%;
   border: 1px solid #b3b3b346;
+  margin-bottom: 1rem;
 }
 
 .card__img {

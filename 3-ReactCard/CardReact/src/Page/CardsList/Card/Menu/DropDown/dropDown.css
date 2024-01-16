@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.list-container {
+  position: relative;
+}
+.list {
+  position: absolute;
+
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: max-content;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 8px 0;
+  z-index: 5;
+}
+@media (max-width: 600px) {
+  .list {
+    transform: rotate(-90deg);
+    top: 0;
+    left: +100% ;
+  }
+}
