@@ -5,8 +5,7 @@ interface DropItemIcoProps {
   children: React.ReactNode;
   text: string;
   specialClass?: string;
-  onClick?: () => void;
-}
+  onClick?: (content: string) => void;}
 const NOOP = () => {};
 export function DropItemIco({
   children,
@@ -14,8 +13,14 @@ export function DropItemIco({
   specialClass = "",
   onClick = NOOP,
 }: DropItemIcoProps) {
+
+  const handleClick = () => {
+    const content = text;
+    onClick(content);
+  };
+
   const block = (
-    <div className={`drop-item ${specialClass}`} onClick={onClick}>
+    <div className={`drop-item ${specialClass}`} onClick={handleClick}>
       <div className="drop-svg-block">{children}</div>
       <div className="drop-content-block">
         <p className="drop-content">{text}</p>

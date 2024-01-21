@@ -4,7 +4,7 @@ import "./dropItem.css";
 interface DropItemProps {
   text: string;
   specialClass?: string;
-  onClick?: () => void;
+  onClick?: (content: string) => void;
 }
 const NOOP = () => {};
 export function DropItem({
@@ -12,8 +12,13 @@ export function DropItem({
   specialClass = "",
   onClick = NOOP,
 }: DropItemProps) {
+
+  const handleClick = () => {
+    const content = text;
+    onClick(content);
+  };
   const block = (
-    <div className={`d-item ${specialClass}`} onClick={onClick}>
+    <div className={`d-item ${specialClass}`} onClick={handleClick}>
       <div className="drop-content-block">
         <p className="d-content">{text}</p>
       </div>
